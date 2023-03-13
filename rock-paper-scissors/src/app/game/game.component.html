@@ -1,0 +1,58 @@
+<body>
+  <div class="wrapper">
+    <div class="pricing-table group">
+      <h1 class="heading">
+        Choose one of the objects to play.
+      </h1>
+      <div class="block personal fl">
+        <img src="assets/images/rock.png" alt="Rock" (click)="play('rock')">
+      </div>
+      <div class="block professional fl">
+        <img src="assets/images/paper.png" alt="Paper" (click)="play('paper')">
+      </div>
+      <div class="block business fl">
+        <img src="assets/images/scissors.png" alt="Scissors" (click)="play('scissors')">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="gameResult">
+  
+  </div>
+  
+  <style>
+    .table td{
+      border:1px solid black;
+    }
+  
+  </style>
+<div class="pricing-table group">
+  <table class="table" style="width:80%;height: 100%">
+    <tr>
+      <td style="width: 55%; color: blueviolet; font-size: 25px; font-style:italic">
+        <p>Your choice</p>
+      </td>
+      <td style="width: 65%; color: blueviolet; font-size: 25px; font-style:italic">
+        <p>Result</p>
+      </td>
+      <td style="width: 55%; color: blueviolet; font-size: 25px; font-style:italic">
+        <p>Computers choice</p>
+    </tr>
+    <tr>
+      <td style="width: 35%">
+        <ng-container *ngIf="userChoice">
+          <img [src]="'assets/images/' + userChoice + '.png'">
+        </ng-container>
+      </td>
+      <td style="vertical-align:top; font-size: 70px; font-style:italic; color: cornflowerblue; border-collapse: collapse">{{gameResult}}</td>
+      <td style="width: 35%; vertical-align: top">
+        <ng-container *ngIf="computerChoice">
+          <img [src]="'assets/images/' + computerChoice + '.png'">
+        </ng-container>
+      </td>
+    </tr>
+  </table>
+</div>
+
+  </body>
+
+
